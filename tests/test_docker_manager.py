@@ -94,7 +94,7 @@ def test_exec_command_triggers_start(manager, mocker):
 
     # Mock the actual system call to prevent running real 'docker exec'
     mock_subprocess = mocker.patch("subprocess.run")
-    mock_exit = mocker.patch("sys.exit")
+    mocker.patch("sys.exit")
 
     manager.exec_command("echo hello")
 
