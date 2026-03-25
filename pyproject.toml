@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "flashbox"
-version = "0.1.0"
+version = "0.1.1"
 description = "A dynamic, repository-aware persistent Docker sandbox CLI for AI Agents."
 readme = "README.md"
 authors = [
@@ -37,6 +37,9 @@ dev = [
 
 [project.urls]
 Homepage = "https://github.com/markeyser/flashbox"
+Documentation = "https://markeyser.github.io/flashbox/"
+Repository = "https://github.com/markeyser/flashbox.git"
+"Bug Tracker" = "https://github.com/markeyser/flashbox/issues"
 
 [project.scripts]
 sandbox = "flashbox.cli:main"
