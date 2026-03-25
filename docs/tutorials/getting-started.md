@@ -10,13 +10,12 @@ Before beginning this tutorial, please ensure you have:
 2. [Docker Desktop](https://www.docker.com/products/docker-desktop/) or [OrbStack](https://orbstack.dev/) running in the background.
 3. Python 3.10+ and `pipx` installed.
 
-## Step 1: Install the Package
-Flashbox is meant to be globally accessible alongside your terminal. Instead of using `pip` natively (which macOS restricts on system python), we use `pipx`.
+## 1. Installation
+
+Flashbox is a fully open-source Python CLI published gracefully to PyPI. To configure it globally so your AI Agents can freely invoke it across any host directory, we recommend installing via `pipx`:
 
 ```bash
-git clone https://github.com/markeyser/flashbox.git
-cd flashbox
-pipx install .
+pipx install flashbox
 ```
 Validate the installation by typing:
 ```bash
