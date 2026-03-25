@@ -125,11 +125,11 @@
       gl.bufferSubData(gl.ARRAY_BUFFER, offset * 4, data.subarray(offset, offset + N * 2));
       gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, offset * 4);
 
-      /* arm colour: cyan → blue → indigo */
+      /* arm colour: bright emerald → teal → green */
       const hue = arm / ARMS;
-      const r = 0.0  + hue * 0.22;
-      const g = 0.78 - hue * 0.35;
-      const bl = 1.0;
+      const r = 0.0  + hue * 0.1;
+      const g = 0.9  - hue * 0.2;
+      const bl = 0.46 - hue * 0.1;
       gl.uniform4f(uColor, r, g, bl, 0.55);
       gl.uniform1f(uSize, 1.4);
       gl.uniform2f(uRes, W, H);
@@ -171,7 +171,7 @@
         const y = cy + Math.sin(angle) * r;
         ctx.beginPath();
         ctx.arc(x, y, 1.5, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${190 + t2 * 60}, 90%, 70%, ${t2 * 0.8})`;
+        ctx.fillStyle = `hsla(${140 + t2 * 40}, 90%, 60%, ${t2 * 0.8})`;
         ctx.fill();
       });
       requestAnimationFrame(draw2);
