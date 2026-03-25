@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if page.meta.hero %}
+  <div class="fb-hero">
+    <canvas id="fb-canvas"></canvas>
+    <div class="fb-hero__content">
+      <p class="fb-hero__eyebrow">Open Source · MIT License</p>
+      <h1 class="fb-hero__title">Persistent sandboxes<br>for AI Coding Agents</h1>
+      <p class="fb-hero__subtitle">
+        Flashbox replaces latency-heavy MCP servers with a blazing-fast Docker CLI.
+        Save tokens. Save time. Ship faster.
+      </p>
+      <div class="fb-hero__cta">
+        <a href="{{ 'tutorials/getting-started/' | url }}" class="fb-btn fb-btn--primary">Get Started</a>
+        <a href="https://github.com/markeyser/flashbox" class="fb-btn fb-btn--ghost" target="_blank">GitHub →</a>
+      </div>
+      <p class="fb-hero__install">
+        <span>Install in seconds:</span>
+        <code>pipx install flashbox</code>
+      </p>
+    </div>
+  </div>
+  <script src="{{ 'assets/hero-particles.js' | url }}"></script>
+  <div class="fb-page-content md-content">
+    <div class="md-content__inner">
+      {{ page.content }}
+    </div>
+  </div>
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock %}

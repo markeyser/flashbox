@@ -4,6 +4,7 @@ site_url: https://your_domain.com/flashbox
 
 theme:
   name: material
+  custom_dir: docs/overrides
   features:
     - navigation.tabs
     - navigation.indexes
@@ -13,18 +14,21 @@ theme:
     - search.highlight
     - toc.follow
   palette:
-    - scheme: default
-      primary: indigo
-      accent: deep purple
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
     - scheme: slate
-      primary: indigo
-      accent: deep purple
+      primary: black
+      accent: cyan
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+    - scheme: default
+      primary: black
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+extra_css:
+  - assets/hero.css
 
 repo_name: Flashbox
 repo_url: https://github.com/markeyser/flashbox
