@@ -3,40 +3,32 @@
 {% block container %}
   {% if page and page.meta and page.meta.hero %}
 
-  {# ─── Full-screen hero – completely outside the MkDocs grid ──────── #}
-  <div class="fb-hero">
+  {# ── Full-viewport hero – outside all MkDocs grid containers ───── #}
+  <div style="position:relative;width:100%;height:100vh;overflow:hidden;background:#0b0c0f;">
     <canvas id="fb-canvas"></canvas>
-    <div class="fb-hero__content">
-      <p class="fb-hero__eyebrow">Open Source · MIT License</p>
-      <h1 class="fb-hero__title">Persistent sandboxes<br>for AI Coding Agents</h1>
-      <p class="fb-hero__subtitle">
-        Flashbox replaces latency-heavy MCP servers with a blazing-fast Docker CLI.
-        Save tokens. Save time. Ship faster.
-      </p>
-      <div class="fb-hero__cta">
-        <a href="{{ 'tutorials/getting-started/' | url }}" class="fb-btn fb-btn--primary">Get Started</a>
-        <a href="https://github.com/markeyser/flashbox" class="fb-btn fb-btn--ghost" target="_blank">GitHub →</a>
+    <div class="mdx-teaser">
+      <div class="md-grid md-typeset">
+        <small>Open Source &middot; MIT License</small>
+        <h1>Persistent sandboxes<br>for AI Coding Agents</h1>
+        <p>
+          Flashbox replaces latency-heavy MCP servers with a blazing-fast Docker CLI.
+          Save tokens. Save time. Ship faster.
+        </p>
+        <a href="{{ 'tutorials/getting-started/' | url }}" class="md-button md-button--primary">
+          Get Started
+        </a>
+        &nbsp;
+        <a href="https://github.com/markeyser/flashbox" class="md-button" target="_blank">
+          GitHub &rarr;
+        </a>
+        <div class="mdx-install">
+          <span>Install in seconds:</span>
+          <code>pipx install flashbox</code>
+        </div>
       </div>
-      <p class="fb-hero__install">
-        <span>Install in seconds:</span>
-        <code>pipx install flashbox</code>
-      </p>
     </div>
   </div>
   <script src="{{ 'assets/hero-particles.js' | url }}"></script>
-
-  {# ─── Normal content below the hero, no sidebars ──────────────────── #}
-  <div class="md-container">
-    <main class="md-main" data-md-component="main">
-      <div class="md-main__inner md-grid fb-below-hero-inner">
-        <div class="md-content fb-content" data-md-component="content">
-          <article class="md-content__inner md-typeset">
-            {{ page.content }}
-          </article>
-        </div>
-      </div>
-    </main>
-  </div>
 
   {% else %}
     {{ super() }}

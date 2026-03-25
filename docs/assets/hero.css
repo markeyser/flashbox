@@ -1,140 +1,30 @@
-/* ── Hero container – true full viewport ────────────────── */
-.fb-hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  min-height: 600px;
-  overflow: hidden;
-  background: #04080f;
-  display: flex;
-  align-items: center;
-  /* Nuke any inherited margin/padding from Material */
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box;
-}
-
-/* Canvas fills the entire hero */
-#fb-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* ── Hero content card ──────────────────────────────────── */
-.fb-hero__content {
-  position: relative;
-  z-index: 2;
-  max-width: 600px;
-  padding: 0 6vw;
-}
-
-.fb-hero__eyebrow {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(0, 210, 255, 0.75);
-  margin: 0 0 1rem;
-}
-
-.fb-hero__title {
-  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
-  font-weight: 800;
-  line-height: 1.1;
-  color: #ffffff;
-  margin: 0 0 1.4rem;
-  letter-spacing: -0.025em;
-  text-shadow: 0 0 60px rgba(0, 200, 255, 0.18);
-}
-
-.fb-hero__subtitle {
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  color: rgba(200, 225, 255, 0.78);
-  line-height: 1.7;
-  margin: 0 0 2.5rem;
-}
-
-/* ── CTA buttons ────────────────────────────────────────── */
-.fb-hero__cta {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 2.2rem;
-}
-
-.fb-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.78rem 1.8rem;
-  border-radius: 9999px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  cursor: pointer;
-  text-decoration: none !important;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-  white-space: nowrap;
-}
-
-.fb-btn--primary {
-  background: linear-gradient(135deg, #00c6ff 0%, #5b6cf9 100%);
-  color: #fff !important;
-  box-shadow: 0 0 28px rgba(0, 198, 255, 0.5);
-}
-.fb-btn--primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 44px rgba(0, 198, 255, 0.75);
-}
-
-.fb-btn--ghost {
-  background: transparent;
-  color: rgba(200, 225, 255, 0.85) !important;
-  border: 1.5px solid rgba(0, 210, 255, 0.35);
-}
-.fb-btn--ghost:hover {
-  background: rgba(0, 210, 255, 0.09);
-  border-color: rgba(0, 210, 255, 0.65);
-  transform: translateY(-2px);
-}
-
-/* ── Install snippet ────────────────────────────────────── */
-.fb-hero__install {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.88rem;
-  color: rgba(180, 205, 255, 0.5);
-  margin: 0;
-}
-.fb-hero__install span {
-  white-space: nowrap;
-}
-.fb-hero__install code {
-  background: rgba(0, 210, 255, 0.08);
-  border: 1px solid rgba(0, 210, 255, 0.22);
-  color: rgba(0, 220, 255, 0.92);
-  padding: 0.2rem 0.75rem;
-  border-radius: 6px;
-  font-size: 0.87rem;
-  font-family: "JetBrains Mono", "Fira Code", monospace;
-}
-
-/* ── Below-hero content section ─────────────────────────── */
-/* Expand content to full width — no sidebars on hero page */
-.fb-below-hero-inner {
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-.fb-content {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
-/* Hide the "Flashbox Documentation" h1 — title is in the hero HTML */
-.fb-content h1:first-child {
-  display: none;
-}
+/*
+  Adapted from Zensical UI (https://github.com/zensical/ui)
+  SPDX-License-Identifier: MIT
+*/
+body,html{height:100%;margin:0}body{background-color:#0b0c0f}
+.mdx-hero{height:100%;left:0;position:absolute;top:0;width:100%}
+.mdx-teaser{bottom:96px;position:absolute;width:100%;z-index:3}
+.mdx-teaser .md-grid{padding:0 16px}
+.mdx-teaser small{color:hsla(var(--md-hue),15%,90%,.82);opacity:1}
+.mdx-teaser a{color:inherit}
+.mdx-teaser a:focus,.mdx-teaser a:hover{color:#fff}
+.mdx-teaser .md-button{backdrop-filter:blur(4px);background-color:hsla(var(--md-hue),15%,90%,.12);color:#fff;transition:all .25s}
+.mdx-teaser .md-button:focus,.mdx-teaser .md-button:hover{color:#fff}
+.mdx-teaser .md-button--primary{backdrop-filter:blur(4px);background:linear-gradient(35deg,rgba(0,180,255,.933),rgba(91,108,249,.8));color:#fff}
+.mdx-teaser .md-button--primary:focus,.mdx-teaser .md-button--primary:hover{color:#fff}
+.mdx-teaser h1{color:#fff;font-size:48px;letter-spacing:-.05em;line-height:1.2;margin-bottom:0;max-width:480px;text-shadow:0 0 16px #000}
+@media (max-width:480px){.mdx-teaser h1{font-size:36px}}
+.mdx-teaser p{color:#fff;font-size:18px;line-height:1.5;max-width:520px;text-shadow:0 0 8px #000}
+@media (max-width:480px){.mdx-teaser p{font-size:14px}}
+.mdx-teaser .mdx-install{display:flex;align-items:center;gap:.6rem;font-size:.88rem;color:rgba(180,210,255,.6);margin-top:1rem}
+.mdx-teaser .mdx-install code{background:rgba(0,210,255,.08);border:1px solid rgba(0,210,255,.25);color:rgba(0,220,255,.92);padding:.2rem .7rem;border-radius:6px;font-size:.87rem}
+.md-main__inner{margin-top:0}
+.md-header{backdrop-filter:none;background-color:transparent;box-shadow:none;color:#fff}
+.md-header__option{display:none}
+.md-tabs{box-shadow:inset 0 -.05rem 0 hsla(0,0%,100%,.1)}
+.md-tabs__item{color:#fff}
+.md-tabs__item--active{border-bottom:.05rem solid #fff}
+.md-content{display:none}
+/* Hero canvas */
+#fb-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
