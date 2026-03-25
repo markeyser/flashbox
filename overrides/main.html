@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block container %}
+  {% if page and page.meta and page.meta.hero %}
+
+  {# ── Scoped hero styles – ONLY loaded on this page ───────────── #}
+  <style>
+    body, html { height: 100%; margin: 0; }
+    body { background-color: #0b0c0f; }
+
+    .fb-hero-wrap {
+      position: fixed; top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      z-index: 1; overflow: hidden;
+      background: #0b0c0f;
+    }
+    #fb-canvas {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; display: block;
+    }
+
+    /* Teaser content overlay */
+    .mdx-teaser {
+      bottom: 96px; position: absolute;
+      width: 100%; z-index: 3;
+    }
+    .mdx-teaser .md-grid { padding: 0 16px; }
+    .mdx-teaser small {
+      color: rgba(200, 255, 220, 0.7); opacity: 1;
+    }
+    .mdx-teaser h1 {
+      color: #fff; font-size: 48px; letter-spacing: -0.05em;
+      line-height: 1.2; margin-bottom: 0; max-width: 480px;
+      text-shadow: 0 0 16px #000;
+    }
+    @media (max-width: 480px) { .mdx-teaser h1 { font-size: 36px; } }
+    .mdx-teaser p {
+      color: #fff; font-size: 18px; line-height: 1.5;
+      max-width: 520px; text-shadow: 0 0 8px #000;
+    }
+    @media (max-width: 480px) { .mdx-teaser p { font-size: 14px; } }
+
+    /* CTA buttons */
+    .mdx-teaser .md-button {
+      backdrop-filter: blur(4px);
+      background-color: rgba(200, 255, 220, 0.12);
+      color: #fff; transition: all 0.25s;
+    }
+    .mdx-teaser .md-button:focus,
+    .mdx-teaser .md-button:hover { color: #fff; }
+    .mdx-teaser .md-button--primary {
+      backdrop-filter: blur(4px);
+      background: linear-gradient(35deg, rgba(0,230,118,0.93), rgba(0,200,83,0.8));
+      color: #fff;
+    }
+    .mdx-teaser .md-button--primary:focus,
+    .mdx-teaser .md-button--primary:hover { color: #fff; }
+
+    /* Install snippet */
+    .mdx-install {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.88rem; color: rgba(180,255,210,0.6); margin-top: 1rem;
+    }
+    .mdx-install code {
+      background: rgba(0,230,118,0.08); border: 1px solid rgba(0,230,118,0.25);
+      color: rgba(0,230,118,0.92); padding: 0.2rem 0.7rem;
+      border-radius: 6px; font-size: 0.87rem;
+    }
+
+    /* Transparent header/tabs floating over hero */
+    .md-header {
+      backdrop-filter: none !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      color: #fff !important;
+      z-index: 10 !important;
+      position: relative !important;
+    }
+    .md-header__option { display: none; }
+    .md-tabs {
+      box-shadow: inset 0 -0.05rem 0 hsla(0,0%,100%,0.1) !important;
+      z-index: 9 !important; position: relative !important;
+    }
+    .md-tabs__item { color: #fff !important; }
+    .md-tabs__item--active { border-bottom: 0.05rem solid #fff; }
+    .md-main__inner { margin-top: 0; }
+    .md-content { display: none; }
+  </style>
+
+  {# ── Full-viewport hero ───────────────────────────────────── #}
+  <div class="fb-hero-wrap">
+    <canvas id="fb-canvas"></canvas>
+    <div class="mdx-teaser">
+      <div class="md-grid md-typeset">
+        <small>Open Source &middot; MIT License</small>
+        <h1>Persistent sandboxes<br>for AI Coding Agents</h1>
+        <p>
+          Flashbox replaces latency-heavy MCP servers with a blazing-fast Docker CLI.
+          Save tokens. Save time. Ship faster.
+        </p>
+        <a href="{{ 'tutorials/getting-started/' | url }}" class="md-button md-button--primary">
+          Get Started
+        </a>
+        &nbsp;
+        <a href="https://github.com/markeyser/flashbox" class="md-button" target="_blank">
+          GitHub &rarr;
+        </a>
+        <div class="mdx-install">
+          <span>Install in seconds:</span>
+          <code>pipx install flashbox</code>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="{{ 'assets/hero-particles-v2.js' | url }}"></script>
+
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock %}

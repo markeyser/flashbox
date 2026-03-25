@@ -1,0 +1,15 @@
+/* Force all links and nav items to emerald green at all times */
+.md-typeset a,
+.md-nav__link,
+.md-tabs__link,
+.md-footer__link {
+  color: #00e676 !important;
+}
+.md-typeset a:hover,
+.md-nav__link:hover,
+.md-tabs__link:hover {
+  color: #69f0ae !important;
+}
+.md-nav__link--active {
+  color: #00e676 !important;
+}

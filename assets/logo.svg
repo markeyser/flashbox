@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 3D Emerald Green Cube -->
+  <!-- Top face (lightest) -->
+  <polygon points="32,8 56,20 32,32 8,20" fill="#69f0ae"/>
+  <!-- Left face (medium) -->
+  <polygon points="8,20 32,32 32,56 8,44" fill="#00c853"/>
+  <!-- Right face (darkest) -->
+  <polygon points="32,32 56,20 56,44 32,56" fill="#00e676"/>
+  <!-- Edge highlights -->
+  <polygon points="32,8 56,20 32,32 8,20" fill="none" stroke="#a5d6a7" stroke-width="0.5" stroke-linejoin="round"/>
+  <polygon points="8,20 32,32 32,56 8,44" fill="none" stroke="#1b5e20" stroke-width="0.5" stroke-linejoin="round"/>
+  <polygon points="32,32 56,20 56,44 32,56" fill="none" stroke="#2e7d32" stroke-width="0.5" stroke-linejoin="round"/>
+</svg>
