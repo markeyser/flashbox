@@ -5,6 +5,8 @@ site_url: https://your_domain.com/flashbox
 theme:
   name: material
   custom_dir: docs/overrides
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
   features:
     - navigation.tabs
     - navigation.indexes
