@@ -22,6 +22,20 @@ Validate the installation by typing:
 sandbox --help
 ```
 
+## 2. AI Agent Integration (Crucial)
+
+To actually allow your AI (Cursor, Antigravity, etc.) to use Flashbox autonomously without MCP, you must pass it our official instructional "Skill" prompt. 
+
+We have bundled the prompt directly in the repository at `agent-skill/SKILL.md`.
+
+Clone or download the repository, then copy that file into your system's global agent `skills` directory:
+```bash
+git clone https://github.com/markeyser/flashbox.git
+mkdir -p ~/.agents/skills/persistent_sandbox
+cp flashbox/agent-skill/SKILL.md ~/.agents/skills/persistent_sandbox/SKILL.md
+```
+*Note: Your agent may look for skills in `.agents/` inside your user directory or your specific project directory.*
+
 ## Step 2: Initialize a Sandbox
 Navigate your terminal to any project folder you'd like your agent to be able to access. We'll use a hypothetical `MyAgentApp`.
 

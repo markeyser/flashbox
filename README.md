@@ -24,6 +24,19 @@ Because Flashbox is officially published, you can install it globally via `pipx`
 pipx install flashbox
 ```
 
+## AI Agent Integration
+
+For Cursor, Antigravity, or other AI frameworks to autonomously build and use your sandboxes without MCP overhead, they need an instructional "Prompt" or "Skill" file.
+
+We have bundled the official agent prompt in this repository under `agent-skill/SKILL.md`. 
+
+To natively integrate Flashbox into your AI Agent, simply copy this file into your agent's skills directory:
+```bash
+mkdir -p ~/.agents/skills/persistent_sandbox
+cp agent-skill/SKILL.md ~/.agents/skills/persistent_sandbox/SKILL.md
+```
+Your AI Agents will now immediately understand how to use `sandbox exec`, `sandbox monitor`, and orchestrate your isolated environments autonomously!
+
 ## Usage
 
 Once installed, the globally accessible `sandbox` command is available from any directory.
