@@ -1,6 +1,8 @@
 # Flashbox
 
 [![PyPI version](https://badge.fury.io/py/flashbox.svg)](https://pypi.org/project/flashbox/)
+[![Tests](https://github.com/markeyser/flashbox/actions/workflows/test.yml/badge.svg)](https://github.com/markeyser/flashbox/actions/workflows/test.yml)
+[![Docs](https://github.com/markeyser/flashbox/actions/workflows/docs.yml/badge.svg)](https://github.com/markeyser/flashbox/actions/workflows/docs.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **Flashbox** is an open-source, ultra-fast CLI designed to replace latency-heavy Model Context Protocol (MCP) servers when providing AI Coding Agents with safe, persistent Docker execution environments. (like Antigravity or Cursor) to safely execute terminal commands, run scripts, and compile code in an isolated Linux environment without polluting your local macOS host. It completely replaces the heavy, latency-prone Boxlite MCP server with a streamlined local Python CLI mapping directly to your Docker daemon.
