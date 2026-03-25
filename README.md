@@ -1,8 +1,9 @@
-# Flashbox ⚡️
+# Flashbox
 
-A lightning-fast, repository-aware persistent Docker sandbox CLI designed specifically for AI Coding Agents.
+[![PyPI version](https://badge.fury.io/py/flashbox.svg)](https://pypi.org/project/flashbox/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Flashbox allows your AI coding agents (like Antigravity or Cursor) to safely execute terminal commands, run scripts, and compile code in an isolated Linux environment without polluting your local macOS host. It completely replaces the heavy, latency-prone Boxlite MCP server with a streamlined local Python CLI mapping directly to your Docker daemon.
+**Flashbox** is an open-source, ultra-fast CLI designed to replace latency-heavy Model Context Protocol (MCP) servers when providing AI Coding Agents with safe, persistent Docker execution environments. (like Antigravity or Cursor) to safely execute terminal commands, run scripts, and compile code in an isolated Linux environment without polluting your local macOS host. It completely replaces the heavy, latency-prone Boxlite MCP server with a streamlined local Python CLI mapping directly to your Docker daemon.
 
 ## Why Flashbox?
 - **Zero Token Overhead:** Unlike MCP servers, Flashbox doesn't inject massive JSON schemas into your prompt context.
@@ -17,11 +18,10 @@ Flashbox allows your AI coding agents (like Antigravity or Cursor) to safely exe
 
 ## Installation
 
-Because Flashbox is packaged cleanly, you can install it globally via `pipx` or your preferred Python package manager:
+Because Flashbox is officially published, you can install it globally via `pipx` (recommended) or your preferred Python package manager:
 
 ```zsh
-# Run this inside the cloned repo
-pipx install .
+pipx install flashbox
 ```
 
 ## Usage
