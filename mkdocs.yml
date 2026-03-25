@@ -27,8 +27,6 @@ theme:
         icon: material/brightness-7
         name: Switch to dark mode
 
-extra_css:
-  - assets/hero.css
 
 repo_name: Flashbox
 repo_url: https://github.com/markeyser/flashbox
