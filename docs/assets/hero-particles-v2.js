@@ -127,10 +127,10 @@
 
       /* arm colour: bright emerald → teal → green */
       const hue = arm / ARMS;
-      const r = 0.0  + hue * 0.1;
-      const g = 0.9  - hue * 0.2;
-      const bl = 0.46 - hue * 0.1;
-      gl.uniform4f(uColor, r, g, bl, 0.55);
+      const r = 0.0  + hue * 0.15;
+      const g = 1.0  - hue * 0.15;
+      const bl = 0.15 - hue * 0.05;
+      gl.uniform4f(uColor, r, g, bl, 0.6);
       gl.uniform1f(uSize, 1.4);
       gl.uniform2f(uRes, W, H);
       gl.drawArrays(gl.POINTS, 0, N);
