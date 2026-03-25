@@ -12,22 +12,11 @@ theme:
     - navigation.indexes
     - navigation.sections
     - navigation.top
-    - search.suggest
-    - search.highlight
     - toc.follow
   palette:
-    - scheme: slate
-      primary: black
-      accent: green
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-    - scheme: default
-      primary: black
-      accent: green
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
+    scheme: slate
+    primary: black
+    accent: green
 
 extra_css:
   - assets/theme.css
