@@ -1,0 +1,51 @@
+site_name: Flashbox
+site_description: A dynamic, repository-aware persistent Docker sandbox CLI for AI Agents.
+site_url: https://your_domain.com/flashbox
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - toc.follow
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+repo_name: Flashbox
+repo_url: https://github.com/markeyser/flashbox
+
+nav:
+  - Home: index.md
+  - Tutorials:
+      - Getting Started: tutorials/getting-started.md
+  - How-to Guides:
+      - Mount Custom Vaults: how-to/setup-persistent-volumes.md
+  - Reference:
+      - CLI Commands: reference/cli-commands.md
+  - Explanation:
+      - Architecture Philosophy: explanation/architecture.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
