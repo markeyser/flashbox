@@ -6,8 +6,18 @@
 **Flashbox** is an open-source, ultra-fast CLI designed to replace latency-heavy Model Context Protocol (MCP) servers when providing AI Coding Agents with safe, persistent Docker execution environments. (like Antigravity or Cursor) to safely execute terminal commands, run scripts, and compile code in an isolated Linux environment without polluting your local macOS host. It completely replaces the heavy, latency-prone Boxlite MCP server with a streamlined local Python CLI mapping directly to your Docker daemon.
 
 ## Why Flashbox?
-- **Zero Token Overhead:** Unlike MCP servers, Flashbox doesn't inject massive JSON schemas into your prompt context.
-- **Dynamic Repository Mounting:** If you run `sandbox start` in `/Projects/MyCoolApp`, Flashbox dynamically mounts that specific directory to `/vault` inside a dedicated `flashbox-mycoolapp` container.
+
+Flashbox was engineered to solve two critical bottlenecks in modern AI Agent development:
+
+### 1. Persistent Sandboxing Saves Time and Tokens (Money)
+Most Agent tools spin up **ephemeral** containers that die when the session ends. Every new chat requires the Agent to spend minutes (and thousands of API tokens) re-downloading `node_modules`, `pip` dependencies, or rebuilding compiled binaries. **Flashbox is persistent.** Because the container lifecycle maps directly to your local project folder, the sandbox survives agent restarts. This drastically reduces LLM API costs by instantly resuming right where the agent left off.
+
+### 2. CLI + Skill.md is Superior to MCP Servers
+Model Context Protocol (MCP) servers are powerful, but they constantly inject massive JSON-RPC schema definitions into the context window on every turn, driving up latency and token costs. Furthermore, MCP servers often struggle with multi-agent file locks. Flashbox uses a radically simplified approach: a globally accessible Python CLI paired with a simple agent instruction prompt (`SKILL.md`). This guarantees **zero schema overhead**, total architectural transparency, and vastly superior execution speed.
+
+### Additional Benefits
+- **Total Isolation:** Your macOS host remains safe. Untrusted scripts run blindly inside the Linux container.
+- **Dynamic Routing:** Automatically boots a uniquely named container strictly for the macOS directory you're currently viewing (e.g., `flashbox-my-cool-app`). container.
 - **Native Execution Speed:** Bypasses JSON-RPC handshakes. `sandbox exec` streams natively through `subprocess` directly to Docker.
 - **Built-in Telemetry:** Ships with a real-time TUI to monitor the active exact CPU and RAM your AI is drawing.
 

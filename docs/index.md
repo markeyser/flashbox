@@ -1,8 +1,18 @@
 # Flashbox Documentation
 
-Welcome to the **Flashbox** documentation. 
+## The Flashbox Value Proposition
 
-Flashbox is a lightning-fast, repository-aware persistent Docker sandbox CLI designed specifically for AI Coding Agents. It allows your agents to safely execute terminal commands, run scripts, and compile code in an isolated Linux environment without polluting your local host, replacing latency-prone MCP servers with native Docker system telemetry.
+Flashbox was engineered to solve two critical bottlenecks in modern AI Agent frameworks:
+
+### 1. Persistent Sandboxing Saves Time and Tokens (Money)
+Most Agent tools spin up **ephemeral** containers that die when the chat session ends. Every new conversation requires the Agent to spend minutes (and thousands of API tokens) re-downloading `node_modules`, `pip` dependencies, or rebuilding code. 
+
+**Flashbox is persistent.** The container lifecycle maps directly to your local project folder and survives agent restarts. This drastically reduces LLM API costs by instantly granting the agent access to previously compiled environments.
+
+### 2. CLI + Skill.md is Superior to MCP Servers
+Model Context Protocol (MCP) servers are powerful, but they constantly inject heavy JSON-RPC schema definitions into the context window on every single turn, bottlenecking latency and increasing token consumption.
+
+Flashbox uses a radically simplified architectural approach: a globally accessible Python CLI paired with a simple agent instruction prompt (`SKILL.md`). This guarantees **zero hidden schema overhead**, total architectural transparency, and vastly superior script execution mapping. It replaces latency-prone MCP servers with native Docker system telemetry.
 
 ## Structure of this Documentation
 
