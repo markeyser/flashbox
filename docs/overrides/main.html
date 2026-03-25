@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block container %}
   {% if page.meta.hero %}
+
+  {# ─── Full-screen hero – completely outside the MkDocs grid ──────── #}
   <div class="fb-hero">
     <canvas id="fb-canvas"></canvas>
     <div class="fb-hero__content">
@@ -22,11 +24,20 @@
     </div>
   </div>
   <script src="{{ 'assets/hero-particles.js' | url }}"></script>
-  <div class="fb-page-content md-content">
-    <div class="md-content__inner">
-      {{ page.content }}
-    </div>
+
+  {# ─── Normal content below the hero, no sidebars ──────────────────── #}
+  <div class="md-container">
+    <main class="md-main" data-md-component="main">
+      <div class="md-main__inner md-grid fb-below-hero-inner">
+        <div class="md-content fb-content" data-md-component="content">
+          <article class="md-content__inner md-typeset">
+            {{ page.content }}
+          </article>
+        </div>
+      </div>
+    </main>
   </div>
+
   {% else %}
     {{ super() }}
   {% endif %}
