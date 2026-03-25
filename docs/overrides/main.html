@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block container %}
-  {% if page.meta.hero %}
+  {% if page and page.meta and page.meta.hero %}
 
   {# ─── Full-screen hero – completely outside the MkDocs grid ──────── #}
   <div class="fb-hero">
