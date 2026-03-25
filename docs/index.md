@@ -1,5 +1,8 @@
 ---
 hero: true
+hide:
+  - navigation
+  - toc
 ---
 
 ## Why Flashbox?
